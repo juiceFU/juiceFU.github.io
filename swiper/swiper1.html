@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>swiper案例1</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,initial-scale=1,user-scalable=no" />
+	<meta name="x5-fullscreen" content="true">
+	<meta name="full-screen" content="yes">
+	<link rel="stylesheet" href="./reset.css">
+	<link rel="stylesheet" href="./swiper-3.4.2.min.css">
+	<script>
+		(function (doc, win) {    
+            var docEl = doc.documentElement;    
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
+            docEl.style.maxWidth = 0.75 * docEl.clientHeight
+           	recalc = function () {    
+	            var clientWidth = docEl.clientWidth;
+	            if (!clientWidth) return;    
+	            docEl.style.fontSize = 20 * (clientWidth / 375) + 'px';
+	        };    
+        	if (!doc.addEventListener) return; 
+
+        	win.addEventListener(resizeEvt, recalc, false);
+
+        	doc.addEventListener('DOMContentLoaded', recalc, false);
+
+        })(document, window);
+
+		</script>
+	<style type="text/css">
+.slide_con{
+    height: 20.85rem;
+    width: 156%;
+    margin-left:-28%;
+}
+.slide_con .swiper-slide{
+    transition: all 1s;
+    transform: scale(0.7);
+    background-image: url(./indexbg.jpg);
+    background-size: 100% 115%;
+}
+
+.slide_con .swiper-slide.swiper-slide-active{
+    transform: scale(1);
+}
+.slide_con .swiper-slide .body{
+    transition: all 1s;
+    opacity: 0
+}
+.slide_con .swiper-slide.swiper-slide-active .body{
+    opacity: 1
+}
+.slide_con .swiper-slide.swiper-slide-active .body .explan{
+    line-height: 1rem;
+    font-size:0.6rem;
+    color:#666;
+    position: relative;
+}
+.slide_con .swiper-slide.swiper-slide-active .body .explan p:last-child{
+    font-size:0.55rem;
+}
+.slide_con .swiper-slide.swiper-slide-active .body .explan .price{
+    position: absolute;
+    right: 0;
+    top:0;
+    color:#ffa72b;
+    font-size:0.75rem;
+}
+.slide_con .swiper-slide img{
+    width: 100%;
+}
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets{
+    bottom: 1.25rem;
+}
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    transition: all 1s;
+    background: #dddce0
+}
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background: #ffa72b
+}
+.slide_con .swiper-slide .body .t{
+    display: flex;
+    justify-content: space-between;
+    margin:0.8rem 0;
+    margin-bottom: 0.6rem 
+}
+.slide_con .swiper-slide .body .t .name{
+    font-size: 0.7rem;
+    color:#45414f;
+}
+.slide_con .swiper-slide .body .t img{
+    width: 0.4rem;
+    margin-left:0.125rem;
+}
+	</style>
+</head>
+<body>
+		<div class="slide_con">
+
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="./index_banner.jpg">
+                        </div>
+                        <div class="body">
+                            <div class="t">
+                                <div class="name">名称</div>
+                                <div class="star"><include file="Public/star" math="4"/></div>
+                           </div>
+                           <div class="explan">
+                               <p>Age.25 北京</p>
+                               <p>年龄不限 &nbsp;&nbsp;男女不限</p>
+                               <p>个人的一段话介绍一段话介绍一段话介绍一段话介绍</p>
+                               <span class="price">￥399/小时</span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="./index_banner.jpg">
+                        </div>
+                        <div class="body">
+                            <div class="t">
+                                <div class="name">名称</div>
+                                <div class="star"><include file="Public/star" math="4"/></div>
+                           </div>
+                           <div class="explan">
+                               <p>Age.25 北京</p>
+                               <p>年龄不限 &nbsp;&nbsp;男女不限</p>
+                               <p>个人的一段话介绍一段话介绍一段话介绍一段话介绍</p>
+                               <span class="price">￥399/小时</span>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="img">
+                            <img src="./index_banner.jpg">
+                        </div>
+                        <div class="body">
+                            <div class="t">
+                                <div class="name">名称</div>
+                                <div class="star"><include file="Public/star" math="4"/></div>
+                           </div>
+                           <div class="explan">
+                               <p>Age.25 北京</p>
+                               <p>年龄不限 &nbsp;&nbsp;男女不限</p>
+                               <p>个人的一段话介绍一段话介绍一段话介绍一段话介绍</p>
+                               <span class="price">￥399/小时</span>
+                           </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+</body>
+
+<script type="text/javascript" src="./jquery-2.1.0.min.js"></script>
+<script type="text/javascript" src="./swiper-3.4.2.jquery.min.js"></script>
+<script type="text/javascript">
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        slidesPerView: 3,
+        paginationClickable: true,
+        spaceBetween: -10,
+        loop:true,
+        centeredSlides: true,
+    });
+</script>
+</html>
