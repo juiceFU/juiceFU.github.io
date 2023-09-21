@@ -19,7 +19,7 @@
 </div>
 
 <div id="app">
-<div class="alert alert-danger" role="alert" style="text-align: center;">
+<div class="alert alert-success	" role="alert" style="text-align: center;">
 <b>今日预约时间为：{{ days }}【{{ week }}】</b>
 </div>
 	<table class="table">
@@ -37,8 +37,8 @@
 	      <th scope="row">{{ item.cid }}</th>
 	      <td>{{ item.wx }}</td>
 	      <td>{{ item.name }}</td>
-	      <td><a href="http://yixinwenhua.situjia.top/wap/yvyue/yvyueok/cid/{{ item.cid }}/ban_id/{{banid1}}/yy_jz_time/{{ days }}.html">8:30-9:30</a></td>
-	      <td><a href="http://yixinwenhua.situjia.top/wap/yvyue/yvyueok/cid/{{ item.cid }}/ban_id/{{banid2}}/yy_jz_time/{{ days }}.html">9:30-10:30</a></td>
+	      <td><a :href="'http://yixinwenhua.situjia.top/wap/yvyue/yvyueok/cid/'+ item.cid +'/ban_id/'+banid1+'/yy_jz_time/'+ days+'.html'">8:30-9:30</a></td>
+	      <td><a :href="'http://yixinwenhua.situjia.top/wap/yvyue/yvyueok/cid/'+ item.cid +'/ban_id/'+banid2+'/yy_jz_time/'+ days+'.html'">9:30-10:30</a></td>
 	    </tr>
 	  </tbody>
 	</table>
